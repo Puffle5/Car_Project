@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1620294894 source:d:\ТУ\v course\ii semester\Деница\car_project\main.cpp
+	<iostream>
+	<vector>
+	<regex>
+	<bits/stdc++.h>
+
