@@ -35,35 +35,25 @@ void outputCar(Car car)
         cout << "Color: "; cout << car.color << endl;
 }
 
-void output(Car* cars, int n)
-{
-    for(int i = 0; i < n; i++)
-        {
-            outputCar(cars[i]);
-        }
-}
+void output(Car* cars, int n) {for(int i = 0; i < n; i++) {outputCar(cars[i]);}}
 
 void findCarsByYear(Car* cars, int n)
 {
     int year;
     cout << "Enter year: "; cin >> year;
-    for (int i = 0 ; i < n; i++){
-        if(cars[i].year == year){
-            outputCar(cars[i]);
-        }
-    }
+    for (int i = 0 ; i < n; i++) {if (cars[i].year == year) {outputCar(cars[i]);}}
 }
 
 void equalPrices(Car* cars, int n)
 {
     for (int i = 0; i < n - 1; i++)
         {
-            for (int j = i+1; j < n; j++)
+            for (int j = i + 1; j < n; j++)
             {
                 if (cars[i].price == cars[j].price)
-                {cout << i << " & " << j << "cars have equal prices." << endl;}
+                {cout << "Cars " << i << " & " << j << " have equal prices." << endl;}
+            }
         }
-    }
 
 }
 
@@ -75,8 +65,8 @@ void equalFuelCosts(Car* cars, int n){
             {
                 if (cars[i].fuel_cost == cars[j].fuel_cost)
                 {cout << "Cars " << i << " & " << j << " have equal fuel costs." << endl;}
+            }
         }
-    }
 
 }
 
@@ -93,13 +83,7 @@ void findCarsByVIN(Car* cars, int n)
     char VIN[17];
     cin.ignore();
     cout << "Enter VIN: "; cin.getline(VIN, 17);
-    for (int i = 0; i < n; i++)
-        {
-            if(!strcmp(VIN, cars[i].VIN))
-            {
-                outputCar(cars[i]);
-            }
-    }
+    for (int i = 0; i < n; i++) {if(!strcmp(VIN, cars[i].VIN)) {outputCar(cars[i]);}}
 }
 
 void withBiggerYear(Car* cars, int n)
@@ -107,20 +91,14 @@ void withBiggerYear(Car* cars, int n)
     int count = 0;
     int year;
     cout << "Enter year: "; cin >> year;
-    for (int i = 0; i < n; i++)
-        {
-        if (cars[i].year > year) {count++;}
-    }
+    for (int i = 0; i < n; i++) {if (cars[i].year > year) {count++;}}
     cout << "There are " << count << " cars with more recent years than " << year << "." << endl;
 }
 
 void sumPrices(Car* cars, int n)
 {
     double sum = 0;
-    for (int i = 0; i < n; i++)
-        {
-        sum += cars[i].price;
-    }
+    for (int i = 0; i < n; i++) {sum += cars[i].price;}
     cout << "Price sum: " << sum << endl;
 }
 
@@ -135,9 +113,9 @@ void sortCarsByBrand(Car* cars, int n)
                 Car temporary = cars[i];
                 cars[i] = cars[j];
                 cars[j] = temporary;
-            }
-        }
-    }
+                }
+           }
+       }
 }
 
 void sortCarsByFuelCost(Car* cars, int n)
@@ -151,9 +129,9 @@ void sortCarsByFuelCost(Car* cars, int n)
                 Car temporary = cars[i];
                 cars[i] = cars[j];
                 cars[j] = temporary;
-            }
-        }
-    }
+                }
+           }
+       }
 }
 
 Car* addCar(Car* cars, int n)
